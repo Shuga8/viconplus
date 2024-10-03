@@ -2,6 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,5 +13,69 @@
 }
 
 body {
-  background: #3a3a3a;
+  background: #373737;
+}
+
+.navbar {
+  min-width: 300px;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.1);
+  position: fixed;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  border-radius: 35px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 30;
+}
+.navbar ul li {
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.navbar ul li.active-nav {
+  background: #0177fb;
+}
+
+.aside {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 32;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  transform: scale(1);
+  transform-origin: center;
+}
+.aside ul li {
+  border-radius: 25px;
+}
+.aside ul li.active-nav {
+  background: #0177fb;
+}
+.aside.shimmer-in {
+  animation-name: shimmer-in;
+  animation-duration: 0.7s;
+}
+.aside.shimmer-out {
+  animation-name: shimmer-out;
+  animation-duration: 0.7s;
+}
+
+@keyframes shimmer-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes shimmer-out {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
 }/*# sourceMappingURL=app.css.map */

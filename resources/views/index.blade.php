@@ -1,3 +1,3 @@
-<x-page-layout>
+<x-page-layout :title="$title">
 
 </x-page-layout>
