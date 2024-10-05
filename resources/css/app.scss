@@ -48,6 +48,7 @@ body {
     width: 100%;
     height: 100vh;
     position: fixed;
+    left: 0;
     z-index: 32;
     background: rgba($color: #000, $alpha: 0.4);
     backdrop-filter: blur(2px);
@@ -77,8 +78,8 @@ body {
     .hero-bg {
         .hero-img {
             filter: drop-shadow(10px 10px 20px rgba(255, 255, 255, 0.8));
-            animation-name: shadow-flicker;
-            animation-duration: 5s;
+            animation-name: shadow-flicker, float-object-small;
+            animation-duration: 5s, 3s;
             animation-iteration-count: infinite;
             perspective: 1000px;
         }
@@ -112,6 +113,19 @@ body {
             flex-grow: 1;
             flex-basis: 200;
             border-radius: 7px;
+        }
+    }
+}
+
+.about-investment {
+    div {
+        div {
+            img {
+                animation-name: float-object-large;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                filter: drop-shadow(10px 10px 20px rgba(247, 203, 73, 0.8));
+            }
         }
     }
 }
@@ -166,5 +180,33 @@ body {
 
     100% {
         filter: drop-shadow(10px 10px 20px rgba(80, 1, 238, 0.8));
+    }
+}
+
+@keyframes float-object-small {
+    0% {
+        margin-top: -100px;
+    }
+
+    50% {
+        margin-bottom: -100px;
+    }
+
+    100% {
+        margin-top: -100px;
+    }
+}
+
+@keyframes float-object-large {
+    0% {
+        margin-top: -100px;
+    }
+
+    50% {
+        margin-bottom: -100px;
+    }
+
+    100% {
+        margin-top: -100px;
     }
 }
