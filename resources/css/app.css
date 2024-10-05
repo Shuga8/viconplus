@@ -12,13 +12,19 @@
   font-family: Roboto, "sans-serif";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #373737;
+  background: #141414;
+  padding: 0px 15px;
+  overflow-x: hidden;
 }
 
 .navbar {
   min-width: 300px;
-  width: 80%;
+  width: 90%;
   background: rgba(255, 255, 255, 0.1);
   position: fixed;
   left: 50%;
@@ -63,6 +69,53 @@ body {
   animation-duration: 0.7s;
 }
 
+.hero .hero-bg .hero-img {
+  filter: drop-shadow(10px 10px 20px rgba(255, 255, 255, 0.8));
+  animation-name: shadow-flicker;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  perspective: 1000px;
+}
+
+.investment-processes {
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.investment-processes .processes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  -moz-column-gap: 45px;
+       column-gap: 45px;
+  padding: 30px 25px 15px 25px;
+}
+.investment-processes .processes .process {
+  background: rgba(255, 255, 255, 0.09);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  min-height: 300px;
+  min-width: 280px;
+  width: 300px;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4), -1px -1px 1px rgba(255, 255, 255, 0.5);
+  flex-grow: 1;
+  flex-basis: 200;
+  border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+  .section-1 {
+    background: url("../../public/hero.png") no-repeat center center;
+    background-size: contain;
+    background-blend-mode: darken;
+    filter: blur(3px);
+    filter: drop-shadow(10px 10px 20px rgba(255, 255, 255, 0.8));
+    animation-name: shadow-flicker;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+}
 @keyframes shimmer-in {
   from {
     transform: scale(0);
@@ -77,5 +130,22 @@ body {
   }
   to {
     transform: scale(0);
+  }
+}
+@keyframes shadow-flicker {
+  0% {
+    filter: drop-shadow(10px 10px 20px rgba(255, 255, 255, 0.8));
+  }
+  25% {
+    filter: drop-shadow(10px 10px 20px rgba(5, 143, 235, 0.8));
+  }
+  50% {
+    filter: drop-shadow(10px 10px 20px rgba(218, 59, 1, 0.8));
+  }
+  75% {
+    filter: drop-shadow(10px 10px 20px rgba(1, 164, 9, 0.8));
+  }
+  100% {
+    filter: drop-shadow(10px 10px 20px rgba(80, 1, 238, 0.8));
   }
 }/*# sourceMappingURL=app.css.map */

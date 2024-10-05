@@ -25,7 +25,8 @@
         </li>
     </ul>
 
-    <div class="flex md:hidden p-2 bg-white bg-opacity-10 rounded-full" onclick="togglePageAsideBar(this)">
+    <div class="flex md:hidden p-2 bg-white bg-opacity-10 rounded-full hover:cursor-pointer"
+        onclick="togglePageAsideBar(this)">
         <x-ri-menu-3-fill class="w-3 h-3 text-white" />
     </div>
 </nav>
