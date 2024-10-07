@@ -1,12 +1,14 @@
 <nav class="navbar flex flex-row items-center place-items-center justify-between px-4 py-3">
     <div class="logo">
-        <img src="{{ asset('android-chrome-192x192.png') }}" alt="Vicron Plus" loading="lazy"
-            class="w-10 h-10 rounded-full">
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('android-chrome-192x192.png') }}" alt="Vicron Plus" loading="lazy"
+                class="w-10 h-10 rounded-full">
+        </a>
     </div>
 
     <ul class="links hidden md:flex md:flex-row">
-        <li class="px-4 py-2 active-nav">
-            <a href="">Home</a>
+        <li class="px-4 py-2 {{ pathNameCheck(route('home')) }}">
+            <a href="{{ route('home') }}">Home</a>
         </li>
         <li class="px-4 py-2">
             <a href="">About</a>
@@ -17,11 +19,11 @@
     </ul>
 
     <ul class="actions hidden md:flex md:flex-row">
-        <li class="px-4 py-2">
-            <a href="">Sign in</a>
+        <li class="px-4 py-2 {{ pathNameCheck(route('user.login')) }}">
+            <a href="{{ route('user.login') }}">Sign in</a>
         </li>
-        <li class="px-4 py-2">
-            <a href="">Sign up</a>
+        <li class="px-4 py-2 {{ pathNameCheck(route('user.register')) }}">
+            <a href="{{ route('user.register') }}">Sign up</a>
         </li>
     </ul>
 
@@ -31,6 +33,7 @@
     </div>
 </nav>
 
+
 <aside class="aside hidden md:hidden items-center place-content-center">
     <x-ri-close-circle-line class="w-6 h-6 text-red-600 absolute top-10 right-4 cursor-pointer"
         onclick="closePageAside()" />
@@ -38,7 +41,7 @@
     <div class="relative flex place-content-center items-center place-items-center w-full h-fit">
 
         <ul class="links flex flex-col gap-y-3">
-            <li class="px-4 py-3 active-nav text-center">
+            <li class="px-4 py-3 text-center">
                 <a href="">Home</a>
             </li>
             <li class="px-4 py-3 text-center">
